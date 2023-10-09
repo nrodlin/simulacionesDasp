@@ -24,5 +24,6 @@
 2) Otros comandos:
 - daspctrl.py: interfaz para mostar gráficas simulación (tienes que ejecutar primero la simulación, darle a Connect y luego Get plots).
 - daspbuilder.py: sirve para crear simulaciones. No tiene la misma estructura que las que te paso, pero si quieres hacer pruebas luego puedes fusionar formatos con un poco de cuidado.
+- daspsetup.py scao.py: se le pasa el archivo python con el bucle de la simulación y abre el diagrama XML de la simulación.
 
 
