@@ -1,0 +1,26 @@
+Simulation generated.
+To run in glaoSim/, use:
+python glao.py params.py
+To view the simulation configuration, use:
+daspsetup.py glao.xml
+To connect to a running simulation (to view PSFs, WFSs, DMs, etc in action) use:
+daspctrl.py
+or:
+daspanalyse.py
+
+Please edit params.py to alter the simulation to meet your requirements.
+
+Some notes about this simulation:
+It will first of all take an interaction matrix.
+This will then be inverted to give a control matrix, using a simple SVD.
+This least-squares wavefront reconstructor will then be used for AO correction.
+
+The LGS tip-tilt signal is assumed valid, i.e. is used.  
+
+Several improvements are possible (left as an excercise for the user):
+Minimum variance wavefront reconstruction from the interaction matrix.
+Ignore the LGS tip-tilt signal, in the user-generated control matrix.
+Model-based reconstruction (e.g. FrIM, FEWHA, etc)
+
+If you already have a control matrix, and thus do not need to generate one, you
+can use --user=nopoke commandline option

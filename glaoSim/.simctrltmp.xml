@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<simdata>
+<simobj name="iscrn_allLayers">
+<plot title="Raw Phase screenL0" cmd="data=ctrl.compList[0].thisObjDict['L0'].screen" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="Unwrapped phase screenL0" cmd="data=ctrl.compList[0].unwrapPhase('L0')" ret="data" type="pylab" when="rpt" palette="gray"/>
+</simobj>
+<simobj name="iatmos_1">
+<plot title="Pupil phase screen (1) (last resource sharer)" cmd="data=ctrl.compList[1].outputData" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="profile phase (1)?" cmd="feedback=1-ctrl.compList[1].control['profilePhase'];ctrl.compList[1].control['profilePhase']=feedback" ret="feedback" when="cmd" texttype="1" wintype="mainwindow">
+button=feedback
+</plot><plot title="phase structure function (1)" cmd="pr,rr=ctrl.compList[1].phaseStructFunc(None,1);data=numpy.array((rr,pr,ctrl.compList[1].theoreticalPhaseStructFunc()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="zernike variance  (1)" cmd="varZ,tabJ=ctrl.compList[1].zernikeVariance(None,1);data=numpy.array((tabJ.astype('f'),varZ,ctrl.compList[1].theoreticalZernikeVariance()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="layer phase L0 (1)" cmd="data=ctrl.compList[1].createSingleLayerPhase('L0')" ret="data" type="pylab" when="rpt" palette="gray"/></simobj>
+<simobj name="xinterp_dm_dm0path1">
+<plot title="xinterp_dm mirror (dm0path1)" cmd="data=-ctrl.compList[2].dmphs*ctrl.compList[2].thisObjList[0].lineOfSight.wavelengthAdjustor" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="xinterp_dm selected mirror (dm0path1)" cmd="data=-ctrl.compList[2].thisObjList[0].lineOfSight.selectedDmPhs" ret="data" type="pylab" when="rpt" palette="gray"/>
+</simobj>
+<simobj name="wfscent_1">
+<plot title="WFS SH img (1) (the SHS images)" cmd="data=ctrl.compList[3].drawCents(0)" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Change mask (0,1,2,3)  (1) (to change the colour of guard pixels)" cmd="data=ctrl.compList[3].imgmask=(ctrl.compList[3].imgmask+1)%4;print ctrl.compList[3].imgmask" when="cmd" ret="data" texttype="1"/><plot title="Change overlay  (1) (to overlay the slope estimation)" cmd="data=ctrl.compList[3].showspot=(ctrl.compList[3].showspot+1)%2" when="cmd" ret="data" texttype="1"/><plot title="XCentroids (1) (display X slopes)" cmd="data=ctrl.compList[3].wfscentObj.outputData[:,:,0]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="YCentroids (1) (display Y slopes)" cmd="data=ctrl.compList[3].wfscentObj.outputData[:,:,1]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="1D centroids (1) (display slopes as a 1D plot)" cmd="data=ctrl.compList[3].wfscentObj.outputData.ravel()" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Centroids 2D (1) (a 2D representation of slopes)" cmd="data=ctrl.compList[3].drawCents(1)" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="Interpolated phase output" cmd="data=ctrl.compList[3].wfscentObj.interpolatedPhaseOutput" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Set interpolated phase array" cmd="ctrl.compList[3].wfscentObj.setInterpolatedPhaseOutput();data=1" ret="data" when="cmd"/></simobj>
+<simobj name="iatmos_2">
+<plot title="Pupil phase screen (2) (last resource sharer)" cmd="data=ctrl.compList[4].outputData" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="profile phase (2)?" cmd="feedback=1-ctrl.compList[4].control['profilePhase'];ctrl.compList[4].control['profilePhase']=feedback" ret="feedback" when="cmd" texttype="1" wintype="mainwindow">
+button=feedback
+</plot><plot title="phase structure function (2)" cmd="pr,rr=ctrl.compList[4].phaseStructFunc(None,1);data=numpy.array((rr,pr,ctrl.compList[4].theoreticalPhaseStructFunc()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="zernike variance  (2)" cmd="varZ,tabJ=ctrl.compList[4].zernikeVariance(None,1);data=numpy.array((tabJ.astype('f'),varZ,ctrl.compList[4].theoreticalZernikeVariance()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="layer phase L0 (2)" cmd="data=ctrl.compList[4].createSingleLayerPhase('L0')" ret="data" type="pylab" when="rpt" palette="gray"/></simobj>
+<simobj name="xinterp_dm_dm0path1">
+<plot title="xinterp_dm mirror (dm0path2)" cmd="data=-ctrl.compList[5].dmphs*ctrl.compList[5].thisObjList[1].lineOfSight.wavelengthAdjustor" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="xinterp_dm selected mirror (dm0path2)" cmd="data=-ctrl.compList[5].thisObjList[1].lineOfSight.selectedDmPhs" ret="data" type="pylab" when="rpt" palette="gray"/>
+</simobj>
+<simobj name="wfscent_2">
+<plot title="WFS SH img (2) (the SHS images)" cmd="data=ctrl.compList[6].drawCents(0)" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Change mask (0,1,2,3)  (2) (to change the colour of guard pixels)" cmd="data=ctrl.compList[6].imgmask=(ctrl.compList[6].imgmask+1)%4;print ctrl.compList[6].imgmask" when="cmd" ret="data" texttype="1"/><plot title="Change overlay  (2) (to overlay the slope estimation)" cmd="data=ctrl.compList[6].showspot=(ctrl.compList[6].showspot+1)%2" when="cmd" ret="data" texttype="1"/><plot title="XCentroids (2) (display X slopes)" cmd="data=ctrl.compList[6].wfscentObj.outputData[:,:,0]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="YCentroids (2) (display Y slopes)" cmd="data=ctrl.compList[6].wfscentObj.outputData[:,:,1]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="1D centroids (2) (display slopes as a 1D plot)" cmd="data=ctrl.compList[6].wfscentObj.outputData.ravel()" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Centroids 2D (2) (a 2D representation of slopes)" cmd="data=ctrl.compList[6].drawCents(1)" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="Interpolated phase output" cmd="data=ctrl.compList[6].wfscentObj.interpolatedPhaseOutput" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Set interpolated phase array" cmd="ctrl.compList[6].wfscentObj.setInterpolatedPhaseOutput();data=1" ret="data" when="cmd"/></simobj>
+<simobj name="iatmos_3">
+<plot title="Pupil phase screen (3) (last resource sharer)" cmd="data=ctrl.compList[7].outputData" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="profile phase (3)?" cmd="feedback=1-ctrl.compList[7].control['profilePhase'];ctrl.compList[7].control['profilePhase']=feedback" ret="feedback" when="cmd" texttype="1" wintype="mainwindow">
+button=feedback
+</plot><plot title="phase structure function (3)" cmd="pr,rr=ctrl.compList[7].phaseStructFunc(None,1);data=numpy.array((rr,pr,ctrl.compList[7].theoreticalPhaseStructFunc()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="zernike variance  (3)" cmd="varZ,tabJ=ctrl.compList[7].zernikeVariance(None,1);data=numpy.array((tabJ.astype('f'),varZ,ctrl.compList[7].theoreticalZernikeVariance()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="layer phase L0 (3)" cmd="data=ctrl.compList[7].createSingleLayerPhase('L0')" ret="data" type="pylab" when="rpt" palette="gray"/></simobj>
+<simobj name="xinterp_dm_dm0path1">
+<plot title="xinterp_dm mirror (dm0path3)" cmd="data=-ctrl.compList[8].dmphs*ctrl.compList[8].thisObjList[2].lineOfSight.wavelengthAdjustor" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="xinterp_dm selected mirror (dm0path3)" cmd="data=-ctrl.compList[8].thisObjList[2].lineOfSight.selectedDmPhs" ret="data" type="pylab" when="rpt" palette="gray"/>
+</simobj>
+<simobj name="wfscent_3">
+<plot title="WFS SH img (3) (the SHS images)" cmd="data=ctrl.compList[9].drawCents(0)" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Change mask (0,1,2,3)  (3) (to change the colour of guard pixels)" cmd="data=ctrl.compList[9].imgmask=(ctrl.compList[9].imgmask+1)%4;print ctrl.compList[9].imgmask" when="cmd" ret="data" texttype="1"/><plot title="Change overlay  (3) (to overlay the slope estimation)" cmd="data=ctrl.compList[9].showspot=(ctrl.compList[9].showspot+1)%2" when="cmd" ret="data" texttype="1"/><plot title="XCentroids (3) (display X slopes)" cmd="data=ctrl.compList[9].wfscentObj.outputData[:,:,0]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="YCentroids (3) (display Y slopes)" cmd="data=ctrl.compList[9].wfscentObj.outputData[:,:,1]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="1D centroids (3) (display slopes as a 1D plot)" cmd="data=ctrl.compList[9].wfscentObj.outputData.ravel()" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Centroids 2D (3) (a 2D representation of slopes)" cmd="data=ctrl.compList[9].drawCents(1)" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="Interpolated phase output" cmd="data=ctrl.compList[9].wfscentObj.interpolatedPhaseOutput" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Set interpolated phase array" cmd="ctrl.compList[9].wfscentObj.setInterpolatedPhaseOutput();data=1" ret="data" when="cmd"/></simobj>
+<simobj name="iatmos_4">
+<plot title="Pupil phase screen (4) (last resource sharer)" cmd="data=ctrl.compList[10].outputData" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="profile phase (4)?" cmd="feedback=1-ctrl.compList[10].control['profilePhase'];ctrl.compList[10].control['profilePhase']=feedback" ret="feedback" when="cmd" texttype="1" wintype="mainwindow">
+button=feedback
+</plot><plot title="phase structure function (4)" cmd="pr,rr=ctrl.compList[10].phaseStructFunc(None,1);data=numpy.array((rr,pr,ctrl.compList[10].theoreticalPhaseStructFunc()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="zernike variance  (4)" cmd="varZ,tabJ=ctrl.compList[10].zernikeVariance(None,1);data=numpy.array((tabJ.astype('f'),varZ,ctrl.compList[10].theoreticalZernikeVariance()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="layer phase L0 (4)" cmd="data=ctrl.compList[10].createSingleLayerPhase('L0')" ret="data" type="pylab" when="rpt" palette="gray"/></simobj>
+<simobj name="xinterp_dm_dm0path1">
+<plot title="xinterp_dm mirror (dm0path4)" cmd="data=-ctrl.compList[11].dmphs*ctrl.compList[11].thisObjList[3].lineOfSight.wavelengthAdjustor" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="xinterp_dm selected mirror (dm0path4)" cmd="data=-ctrl.compList[11].thisObjList[3].lineOfSight.selectedDmPhs" ret="data" type="pylab" when="rpt" palette="gray"/>
+</simobj>
+<simobj name="wfscent_4">
+<plot title="WFS SH img (4) (the SHS images)" cmd="data=ctrl.compList[12].drawCents(0)" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Change mask (0,1,2,3)  (4) (to change the colour of guard pixels)" cmd="data=ctrl.compList[12].imgmask=(ctrl.compList[12].imgmask+1)%4;print ctrl.compList[12].imgmask" when="cmd" ret="data" texttype="1"/><plot title="Change overlay  (4) (to overlay the slope estimation)" cmd="data=ctrl.compList[12].showspot=(ctrl.compList[12].showspot+1)%2" when="cmd" ret="data" texttype="1"/><plot title="XCentroids (4) (display X slopes)" cmd="data=ctrl.compList[12].wfscentObj.outputData[:,:,0]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="YCentroids (4) (display Y slopes)" cmd="data=ctrl.compList[12].wfscentObj.outputData[:,:,1]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="1D centroids (4) (display slopes as a 1D plot)" cmd="data=ctrl.compList[12].wfscentObj.outputData.ravel()" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Centroids 2D (4) (a 2D representation of slopes)" cmd="data=ctrl.compList[12].drawCents(1)" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="Interpolated phase output" cmd="data=ctrl.compList[12].wfscentObj.interpolatedPhaseOutput" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Set interpolated phase array" cmd="ctrl.compList[12].wfscentObj.setInterpolatedPhaseOutput();data=1" ret="data" when="cmd"/></simobj>
+<simobj name="iatmos_5">
+<plot title="Pupil phase screen (5) (last resource sharer)" cmd="data=ctrl.compList[13].outputData" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="profile phase (5)?" cmd="feedback=1-ctrl.compList[13].control['profilePhase'];ctrl.compList[13].control['profilePhase']=feedback" ret="feedback" when="cmd" texttype="1" wintype="mainwindow">
+button=feedback
+</plot><plot title="phase structure function (5)" cmd="pr,rr=ctrl.compList[13].phaseStructFunc(None,1);data=numpy.array((rr,pr,ctrl.compList[13].theoreticalPhaseStructFunc()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="zernike variance  (5)" cmd="varZ,tabJ=ctrl.compList[13].zernikeVariance(None,1);data=numpy.array((tabJ.astype('f'),varZ,ctrl.compList[13].theoreticalZernikeVariance()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="layer phase L0 (5)" cmd="data=ctrl.compList[13].createSingleLayerPhase('L0')" ret="data" type="pylab" when="rpt" palette="gray"/></simobj>
+<simobj name="xinterp_dm_dm0path1">
+<plot title="xinterp_dm mirror (dm0path5)" cmd="data=-ctrl.compList[14].dmphs*ctrl.compList[14].thisObjList[4].lineOfSight.wavelengthAdjustor" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="xinterp_dm selected mirror (dm0path5)" cmd="data=-ctrl.compList[14].thisObjList[4].lineOfSight.selectedDmPhs" ret="data" type="pylab" when="rpt" palette="gray"/>
+</simobj>
+<simobj name="wfscent_5">
+<plot title="WFS SH img (5) (the SHS images)" cmd="data=ctrl.compList[15].drawCents(0)" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Change mask (0,1,2,3)  (5) (to change the colour of guard pixels)" cmd="data=ctrl.compList[15].imgmask=(ctrl.compList[15].imgmask+1)%4;print ctrl.compList[15].imgmask" when="cmd" ret="data" texttype="1"/><plot title="Change overlay  (5) (to overlay the slope estimation)" cmd="data=ctrl.compList[15].showspot=(ctrl.compList[15].showspot+1)%2" when="cmd" ret="data" texttype="1"/><plot title="XCentroids (5) (display X slopes)" cmd="data=ctrl.compList[15].wfscentObj.outputData[:,:,0]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="YCentroids (5) (display Y slopes)" cmd="data=ctrl.compList[15].wfscentObj.outputData[:,:,1]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="1D centroids (5) (display slopes as a 1D plot)" cmd="data=ctrl.compList[15].wfscentObj.outputData.ravel()" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Centroids 2D (5) (a 2D representation of slopes)" cmd="data=ctrl.compList[15].drawCents(1)" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="Interpolated phase output" cmd="data=ctrl.compList[15].wfscentObj.interpolatedPhaseOutput" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Set interpolated phase array" cmd="ctrl.compList[15].wfscentObj.setInterpolatedPhaseOutput();data=1" ret="data" when="cmd"/></simobj>
+<simobj name="iatmos_6">
+<plot title="Pupil phase screen (6) (last resource sharer)" cmd="data=ctrl.compList[16].outputData" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="profile phase (6)?" cmd="feedback=1-ctrl.compList[16].control['profilePhase'];ctrl.compList[16].control['profilePhase']=feedback" ret="feedback" when="cmd" texttype="1" wintype="mainwindow">
+button=feedback
+</plot><plot title="phase structure function (6)" cmd="pr,rr=ctrl.compList[16].phaseStructFunc(None,1);data=numpy.array((rr,pr,ctrl.compList[16].theoreticalPhaseStructFunc()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="zernike variance  (6)" cmd="varZ,tabJ=ctrl.compList[16].zernikeVariance(None,1);data=numpy.array((tabJ.astype('f'),varZ,ctrl.compList[16].theoreticalZernikeVariance()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="layer phase L0 (6)" cmd="data=ctrl.compList[16].createSingleLayerPhase('L0')" ret="data" type="pylab" when="rpt" palette="gray"/></simobj>
+<simobj name="xinterp_dm_dm0path1">
+<plot title="xinterp_dm mirror (dm0path6)" cmd="data=-ctrl.compList[17].dmphs*ctrl.compList[17].thisObjList[5].lineOfSight.wavelengthAdjustor" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="xinterp_dm selected mirror (dm0path6)" cmd="data=-ctrl.compList[17].thisObjList[5].lineOfSight.selectedDmPhs" ret="data" type="pylab" when="rpt" palette="gray"/>
+</simobj>
+<simobj name="wfscent_6">
+<plot title="WFS SH img (6) (the SHS images)" cmd="data=ctrl.compList[18].drawCents(0)" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Change mask (0,1,2,3)  (6) (to change the colour of guard pixels)" cmd="data=ctrl.compList[18].imgmask=(ctrl.compList[18].imgmask+1)%4;print ctrl.compList[18].imgmask" when="cmd" ret="data" texttype="1"/><plot title="Change overlay  (6) (to overlay the slope estimation)" cmd="data=ctrl.compList[18].showspot=(ctrl.compList[18].showspot+1)%2" when="cmd" ret="data" texttype="1"/><plot title="XCentroids (6) (display X slopes)" cmd="data=ctrl.compList[18].wfscentObj.outputData[:,:,0]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="YCentroids (6) (display Y slopes)" cmd="data=ctrl.compList[18].wfscentObj.outputData[:,:,1]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="1D centroids (6) (display slopes as a 1D plot)" cmd="data=ctrl.compList[18].wfscentObj.outputData.ravel()" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Centroids 2D (6) (a 2D representation of slopes)" cmd="data=ctrl.compList[18].drawCents(1)" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="Interpolated phase output" cmd="data=ctrl.compList[18].wfscentObj.interpolatedPhaseOutput" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Set interpolated phase array" cmd="ctrl.compList[18].wfscentObj.setInterpolatedPhaseOutput();data=1" ret="data" when="cmd"/></simobj>
+<simobj name="iatmos_7">
+<plot title="Pupil phase screen (7) (last resource sharer)" cmd="data=ctrl.compList[19].outputData" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="profile phase (7)?" cmd="feedback=1-ctrl.compList[19].control['profilePhase'];ctrl.compList[19].control['profilePhase']=feedback" ret="feedback" when="cmd" texttype="1" wintype="mainwindow">
+button=feedback
+</plot><plot title="phase structure function (7)" cmd="pr,rr=ctrl.compList[19].phaseStructFunc(None,1);data=numpy.array((rr,pr,ctrl.compList[19].theoreticalPhaseStructFunc()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="zernike variance  (7)" cmd="varZ,tabJ=ctrl.compList[19].zernikeVariance(None,1);data=numpy.array((tabJ.astype('f'),varZ,ctrl.compList[19].theoreticalZernikeVariance()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="layer phase L0 (7)" cmd="data=ctrl.compList[19].createSingleLayerPhase('L0')" ret="data" type="pylab" when="rpt" palette="gray"/></simobj>
+<simobj name="xinterp_dm_dm0path1">
+<plot title="xinterp_dm mirror (dm0path7)" cmd="data=-ctrl.compList[20].dmphs*ctrl.compList[20].thisObjList[6].lineOfSight.wavelengthAdjustor" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="xinterp_dm selected mirror (dm0path7)" cmd="data=-ctrl.compList[20].thisObjList[6].lineOfSight.selectedDmPhs" ret="data" type="pylab" when="rpt" palette="gray"/>
+</simobj>
+<simobj name="wfscent_7">
+<plot title="WFS SH img (7) (the SHS images)" cmd="data=ctrl.compList[21].drawCents(0)" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Change mask (0,1,2,3)  (7) (to change the colour of guard pixels)" cmd="data=ctrl.compList[21].imgmask=(ctrl.compList[21].imgmask+1)%4;print ctrl.compList[21].imgmask" when="cmd" ret="data" texttype="1"/><plot title="Change overlay  (7) (to overlay the slope estimation)" cmd="data=ctrl.compList[21].showspot=(ctrl.compList[21].showspot+1)%2" when="cmd" ret="data" texttype="1"/><plot title="XCentroids (7) (display X slopes)" cmd="data=ctrl.compList[21].wfscentObj.outputData[:,:,0]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="YCentroids (7) (display Y slopes)" cmd="data=ctrl.compList[21].wfscentObj.outputData[:,:,1]" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="1D centroids (7) (display slopes as a 1D plot)" cmd="data=ctrl.compList[21].wfscentObj.outputData.ravel()" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Centroids 2D (7) (a 2D representation of slopes)" cmd="data=ctrl.compList[21].drawCents(1)" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="Interpolated phase output" cmd="data=ctrl.compList[21].wfscentObj.interpolatedPhaseOutput" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="Set interpolated phase array" cmd="ctrl.compList[21].wfscentObj.setInterpolatedPhaseOutput();data=1" ret="data" when="cmd"/></simobj>
+<simobj name="tomoRecon_recon">
+<plot title="tomoRecon_recon Output data (['recon'])" cmd="data=ctrl.compList[22].outputData" ret="data" type="pylab" when="rpt"/>
+<plot title="tomoRecon_recon Use reference centroids (['recon'])" ret="data" when="cmd" texttype="1" wintype="mainwindow">
+<cmd>
+data=ctrl.compList[22].control["subtractRef"]
+ctrl.compList[22].control["subtractRef"]=1-data
+</cmd>
+button=1-data
+</plot>
+<plot title="tomoRecon_recon layer0 (['recon'])" cmd="data=-ctrl.compList[22].getLayer(0)" ret="data" type="pylab" when="rpt"/>
+<plot title="tomoRecon_recon reconmx (['recon'])" cmd="data=ctrl.compList[22].reconmx" ret="data" type="pylab" when="cmd"/>
+<plot title="tomoRecon_recon pmx (['recon'])" cmd="data=ctrl.compList[22].spmx" ret="data" type="pylab" when="cmd"/>
+<plot title="tomoRecon_recon inputData (['recon'])" cmd="data=ctrl.compList[22].inputData" ret="data" type="pylab" when="rpt"/>
+<plot title="Display GS overlap" cmd="ctrl.compList[22].displayGSOverlap();data='Ensure that running simulation has X forwarding, and close plot before continuing (it freezes simulation)'" type="text" when="cmd"/>
+</simobj>
+<simobj name="iatmos_sci1">
+<plot title="Pupil phase screen (sci1) (last resource sharer)" cmd="data=ctrl.compList[23].outputData" ret="data" type="pylab" when="rpt" palette="gray"/><plot title="profile phase (sci1)?" cmd="feedback=1-ctrl.compList[23].control['profilePhase'];ctrl.compList[23].control['profilePhase']=feedback" ret="feedback" when="cmd" texttype="1" wintype="mainwindow">
+button=feedback
+</plot><plot title="phase structure function (sci1)" cmd="pr,rr=ctrl.compList[23].phaseStructFunc(None,1);data=numpy.array((rr,pr,ctrl.compList[23].theoreticalPhaseStructFunc()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="zernike variance  (sci1)" cmd="varZ,tabJ=ctrl.compList[23].zernikeVariance(None,1);data=numpy.array((tabJ.astype('f'),varZ,ctrl.compList[23].theoreticalZernikeVariance()))" ret="data" type="pylab" when="rpt" dim="1"/><plot title="layer phase L0 (sci1)" cmd="data=ctrl.compList[23].createSingleLayerPhase('L0')" ret="data" type="pylab" when="rpt" palette="gray"/></simobj>
+<simobj name="xinterp_dm_dm0path1">
+<plot title="xinterp_dm output (dm0pathsci1)" cmd="data=ctrl.compList[24].outputData" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="xinterp_dm mirror (dm0pathsci1)" cmd="data=-ctrl.compList[24].dmphs*ctrl.compList[24].thisObjList[7].lineOfSight.wavelengthAdjustor" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="xinterp_dm selected mirror (dm0pathsci1)" cmd="data=-ctrl.compList[24].thisObjList[7].lineOfSight.selectedDmPhs" ret="data" type="pylab" when="rpt" palette="gray"/>
+</simobj>
+<simobj name="science_sci1">
+<plot title="Instantaneous image (sci1)" cmd="data=ctrl.compList[25].thisObjList[0].sciObj.instImgView" ret="data" type="pylab" when="rpt" palette="gray"/>
+<plot title="long PSF (sci1)" cmd="data=ctrl.compList[25].getLongPsf(0)" ret="data" type="pylab" dim="2" when="rpt" palette="gray"/>
+<plot title="Science params (sci1)" cmd="data=ctrl.compList[25].strParams(0,ctrl.thisiter)" ret="data" when="rpt10" texttype="1" wintype="ownwindow" textreplace="0"/>
+<plot title="View central psf (sci1)" when="cmd" ret="feedback" texttype="1" wintype="mainwindow">
+<cmd>
+if ctrl.compList[25].control['viewCentral']==0:
+ ctrl.compList[25].control['viewCentral']=0.4
+ feedback=1
+else:
+ ctrl.compList[25].control['viewCentral']=0.
+ feedback=0
+so=ctrl.compList[25].thisObjList[0].sciObj
+f=int(so.nimg*0.4)
+t=int(so.nimg*0.6)
+if feedback:
+ so.instImgView=so.instImg[f:t,f:t]
+else:
+ so.instImgView=so.instImg
+</cmd>
+button=feedback
+</plot>
+<plot title="science phase (sci1)" cmd="data=ctrl.compList[25].thisObjList[0].sciObj.phs" ret="data" type="pylab" dim="2" when="rpt" palette="gray" />
+<plot title="Science history (sci1)" cmd="data=ctrl.compList[25].thisObjList[0].sciObj.history[:,:ctrl.compList[25].thisObjList[0].sciObj.historyCnt]" ret="data" when="rpt10" type="pylab" dim="2" palette="gray"/>
+<plot title="Zero science (sci1)" cmd="ctrl.compList[25].control['zero_science']+=1;data='Science zeroed'" ret="data" when="cmd" texttype="1" wintype="mainwindow"/>
+<plot title="Compute OTF Strehl (sci1)" when="cmd" ret="feedback" texttype="1" wintype="mainwindow">
+<cmd>
+so=ctrl.compList[25].thisObjList[0].sciObj
+feedback=1-so.computeOTF
+so.computeOTF=feedback
+</cmd>
+button=feedback
+</plot>
+<plot title="Lucky history (sci1)" cmd="data=ctrl.compList[25].thisObjList[0].sciObj.luckyHistory[:,:ctrl.compList[25].thisObjList[0].sciObj.luckyHistoryCnt]" ret="data" when="rpt1" type="pylab" dim="2" palette="gray"/>
+<plot title="Lucky image (sci1)" cmd="data=ctrl.compList[25].thisObjList[0].sciObj.luckyLastImg" ret="data" when="rpt1" type="pylab" dim="2" palette="gray"/>
+<plot title="Radial profile (sci1)" cmd="data=ctrl.compList[25].thisObjList[0].sciObj.computeRadialProfileAndEncircledEnergy(ctrl.compList[25].thisObjList[0].sciObj.longExpPSF);data[1]=data[0];data[0]=ctrl.compList[25].thisObjList[0].sciObj.rad" ret="data" when="rpt" type="pylab" dim="1"/>
+</simobj>
+<plot title="Poke all" ret="data" when="cmd" texttype="1" wintype="mainwindow">
+<cmd>
+for obj in ctrl.compList:
+ if obj.control.has_key("poke"):
+  obj.control["poke"]=1
+ if obj.control.has_key("zero_dm"):
+  obj.control["zero_dm"]=1
+ if obj.control.has_key("cal_source"):
+  obj.control["cal_source"]=1
+ print obj.control
+print "INFORMATION Starting poking"
+data="Starting poking"</cmd>
+</plot>
+<plot title="Get ref cents" ret="data" when="cmd" texttype="1" wintype="mainwindow">
+<cmd>
+for obj in ctrl.compList:
+ if obj.control.has_key("takeRef"):
+  obj.control["takeRef"]=1
+ if obj.control.has_key("zero_dm"):
+  obj.control["zero_dm"]=1
+ if obj.control.has_key("cal_source"):
+  obj.control["cal_source"]=1
+ print obj.control
+print "INFORMATION Starting reference centroids"
+data="Starting reference centroids"</cmd>
+</plot>
+<plot title="Close loop, zero science" ret="data" when="cmd" texttype="1" wintype="mainwindow">
+<cmd>
+for obj in ctrl.compList:
+ if obj.control.has_key("zero_science"):
+  obj.control["zero_science"]=1
+ if obj.control.has_key("cal_source"):
+  obj.control["cal_source"]=0
+ if obj.control.has_key("zero_dm"):
+  obj.control["zero_dm"]=1
+ if obj.control.has_key("close_dm"):
+  obj.control["close_dm"]=1
+ print obj.control
+data="Zeroing science, closing loop etc"
+print data</cmd>
+</plot>
+<plot title="Zero science" ret="data" when="cmd" texttype="1" wintype="mainwindow">
+<cmd>
+for obj in ctrl.compList:
+ if obj.control.has_key("zero_science"):
+  obj.control["zero_science"]=1
+ print obj.control
+data="Zeroing science"
+print data</cmd>
+</plot>
+<plot title="Open loop, zero science" ret="data" when="cmd" texttype="1" wintype="mainwindow">
+<cmd>
+for obj in ctrl.compList:
+ if obj.control.has_key("zero_science"):
+  obj.control["zero_science"]=1
+ if obj.control.has_key("cal_source"):
+  obj.control["cal_source"]=0
+ if obj.control.has_key("zero_dm"):
+  obj.control["zero_dm"]=1
+ if obj.control.has_key("close_dm"):
+  obj.control["close_dm"]=0
+ print obj.control
+data="Zeroing science, opening loop etc"
+print data</cmd>
+</plot>
+<plot title="Reset science" ret="data" when="cmd" texttype="1" wintype="mainwindow">
+<cmd>
+for obj in ctrl.compList:
+ if obj.control.has_key("zero_science"):
+  obj.control["zero_science"]=1
+ print obj.control
+data="Zeroing science"
+print data</cmd>
+</plot>
+<plot title="Calibration mode" ret="data" when="cmd" texttype="1" wintype="mainwindow">
+<cmd>
+for obj in ctrl.compList:
+ if obj.control.has_key("cal_source"):
+  obj.control["cal_source"]=1
+data="Setting cal_source to 1"</cmd>
+</plot>
+<plot title="Control status" ret="data" when="cmd" texttype="1" wintype="mainwindow">
+<cmd>
+data=""
+for obj in ctrl.compList:
+ print '%s: %s'%(obj.objID,str(obj.control))
+ data+=obj.objID+": "+str(obj.control)+"\n"
+</cmd>
+</plot>
+<plot title="Timings" ret="data" when="rpt" texttype="1" wintype="ownwindow" textreplace="1">
+<cmd>
+data=(ctrl.compListNames,ctrl.thisIterTiming,ctrl.meanTiming,ctrl.meanTiming2,ctrl.thisiter,ctrl.frametime,ctrl.meanClock)
+</cmd>
+import numpy
+res="	mean	stdev	mean cpu clocks	This iter\n"
+for i in range(len(data[0])):
+  res+="%s:	%g	%g	%g	%g\n"%(data[0][i],data[2][i]/data[4],numpy.sqrt(data[3][i]/data[4]-(data[2][i]/data[4])**2),data[6][i]/data[4],data[1][i])
+data=res+"Frame %d (%g fps, %g spf)"%(data[4],1./data[5],data[5])
+</plot>
+<plot title="Iteration counter" cmd="data=(ctrl.thisiter,ctrl.frametime)" ret="data" when="rpt" texttype="1" wintype="ownwindow" textreplace="1">
+data="Frame %d (%g fps, %g spf)"%(data[0],1.0/data[1],data[1])
+</plot>
+</simdata>

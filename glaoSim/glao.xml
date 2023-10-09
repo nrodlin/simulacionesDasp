@@ -1,0 +1,156 @@
+
+<aosim>
+<simSetup>
+<precode>
+if not "nopoke" in ctrl.userArgList:ctrl.doInitialPokeThenRun()
+</precode>
+<simulationObject cpu="(1, 1)" import="science.iscrn" object="iscrn" pos="80,64" tag="1" shortname="iscrn" pixmap="infScrn.xpm" feedback="0" pyname="" groupshare="0" args="" connectto="[3, 11]" connectfrom="[]" textcol="red" idstr="allLayers">
+<lines>
+[
+[],
+[],
+]
+</lines>
+<endlines>
+[
+]
+</endlines>
+<parentNames>
+[]
+</parentNames>
+<sharedTo>
+[]
+</sharedTo>
+</simulationObject>
+<simulationObject cpu="(1, 1)" import="science.iatmos" object="iatmos" pos="80,144" tag="3" shortname="iatmos" pixmap="infAtmos.xpm" feedback="0" pyname="" groupshare="0" args="" connectto="[16]" connectfrom="[1]" textcol="red" idstr="$">
+<lines>
+[
+[],
+]
+</lines>
+<endlines>
+[
+[],
+]
+</endlines>
+<parentNames>
+['allLayers']
+</parentNames>
+<sharedTo>
+[]
+</sharedTo>
+</simulationObject>
+<simulationObject cpu="(1, 1)" import="science.xinterp_dm" object="dm" pos="80,224" tag="16" shortname="xdm" pixmap="xinterp_dm.xpm" feedback="0" pyname="" groupshare="1" args="" connectto="[7]" connectfrom="[3, 9]" textcol="red" idstr="dm0path$">
+<lines>
+[
+[],
+]
+</lines>
+<endlines>
+[
+[],
+[(129, 417), (129, 192)],
+]
+</endlines>
+<parentNames>
+['', '']
+</parentNames>
+<sharedTo>
+[17]
+</sharedTo>
+</simulationObject>
+<simulationObject cpu="(1, 1)" import="science.wfscent" object="wfscent" pos="80,304" tag="7" shortname="wfscent" pixmap="wfscent.xpm" feedback="0" pyname="" groupshare="0" args="" connectto="[9]" connectfrom="[16]" textcol="red" idstr="$">
+<lines>
+[
+[],
+]
+</lines>
+<endlines>
+[
+[],
+]
+</endlines>
+<parentNames>
+['']
+</parentNames>
+<sharedTo>
+[]
+</sharedTo>
+</simulationObject>
+<simulationObject cpu="(1, 1)" import="science.tomoRecon" object="recon" pos="80,384" tag="9" shortname="tomoRecon" pixmap="xinterp_recon.xpm" feedback="1" pyname="" groupshare="0" args="" connectto="[16, 17, ]" connectfrom="[7]" textcol="red" idstr="recon">
+<lines>
+[
+[(129, 417), (129, 192)],
+[(129, 417), (129, 192)],
+]
+</lines>
+<endlines>
+[
+[],
+]
+</endlines>
+<parentNames>
+['$']
+</parentNames>
+<sharedTo>
+[]
+</sharedTo>
+</simulationObject>
+<simulationObject cpu="(1, 1)" import="science.iatmos" object="iatmos" pos="180,144" tag="11" shortname="iatmos" pixmap="infAtmos.xpm" feedback="0" pyname="" groupshare="0" args="" connectto="[17]" connectfrom="[1]" textcol="red" idstr="$">
+<lines>
+[
+[],
+]
+</lines>
+<endlines>
+[
+[],
+]
+</endlines>
+<parentNames>
+['allLayers']
+</parentNames>
+<sharedTo>
+[]
+</sharedTo>
+</simulationObject>
+<simulationObject cpu="(1, 1)" import="science.xinterp_dm" object="dm" pos="180,224" tag="17" shortname="xdm" pixmap="xinterp_dm.xpm" feedback="0" pyname="" groupshare="1" args="" connectto="[15]" connectfrom="[11, 9]" textcol="red" idstr="dm0path$">
+<lines>
+[
+[],
+]
+</lines>
+<endlines>
+[
+[],
+[(129, 417), (129, 192)],
+]
+</endlines>
+<parentNames>
+['', '']
+</parentNames>
+<sharedTo>
+[]
+</sharedTo>
+</simulationObject>
+<simulationObject cpu="(1, 1)" import="science.science" object="science" pos="180,304" tag="15" shortname="science" pixmap="sci.xpm" feedback="0" pyname="" groupshare="0" args="" connectto="[]" connectfrom="[17]" textcol="red" idstr="$">
+<lines>
+[
+]
+</lines>
+<endlines>
+[
+[],
+]
+</endlines>
+<parentNames>
+['']
+</parentNames>
+<sharedTo>
+[]
+</sharedTo>
+</simulationObject>
+<groupShare idstr="1,2,3,4,5,6,7," cpu="[]" coordlist="[(30, 104), (120, 104), (120, 344), (30, 344)]"/>
+<groupShare idstr="sci1,sci2,sci3,sci4,sci5,sci6,sci7," cpu="[]" coordlist="[(140, 104), (230, 104), (230, 344), (140, 344)]"/>
+</simSetup>
+</aosim>
